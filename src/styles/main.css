@@ -1,0 +1,93 @@
+body {
+  overflow-x: hidden;
+}
+
+.title-main {
+  text-indent: 30px;
+}
+
+.form-style {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid red;
+  align-items: center;
+  background-color: antiquewhite;
+  border-radius: 20px;
+}
+
+.label-style {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  text-indent: 50px;
+  gap: 15px;
+}
+
+.input-style {
+  height: 30px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.plus-btn {
+  width: 150px;
+  align-items: center;
+  height: 35px;
+  margin-left: auto;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+
+.title-work {
+  text-indent: 30px;
+  line-height: 50px;
+}
+
+.work-box {
+  display: flex;
+  flex-wrap: wrap; /* 넘치면 다음 줄로 이동 */
+  max-width: 100%;
+  min-height: auto; /* 부모 요소의 높이 유지 */
+  margin-top: 0px;
+}
+
+.work-form {
+  border: 1px solid red;
+  border-radius: 25px;
+  min-width: 350px;
+  max-width: 500px;
+  min-height: 250px;
+  max-height: 350px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: center;
+  line-height: 35px;
+  word-wrap: break-word;
+  overflow: break-word;
+}
+
+.work-title {
+  display: block;
+  text-indent: 20px;
+  margin-top: 30px;
+  font-size: 25px;
+  text-align: left;
+}
+
+.work-content {
+  display: block;
+  text-indent: 20px;
+  text-align: left;
+}
+
+.work-delete-btn {
+  width: 150px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.work-complete-btn {
+  width: 150px;
+  height: 50px;
+}
