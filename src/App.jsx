@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import "./styles/main.css";
 
 const App = () => {
   const [text, setText] = useState(() => {
-    const localText = localStorage.getItem("text");
-    return localText ? JSON.parse(localText) : [];
+    const localText = localStorage.getItem("text"); // 로컬스토리지의 데이터를 가져옴
+    return localText ? JSON.parse(localText) : []; // 데이터가 있으면 저장하고, 없으면 빈 배열로 놔둔다.
   });
 
   const [moveText, setMoveText] = useState(() => {
@@ -21,6 +22,9 @@ const App = () => {
     localStorage.setItem("text", JSON.stringify(text));
     localStorage.setItem("moveText", JSON.stringify(moveText));
   }, [text, moveText]);
+
+  // input 첫 번째 박스 포커스
+  const focusInput = useRef("");
 
   // 리셋폼
   const resetForm = () => {
@@ -42,6 +46,10 @@ const App = () => {
     };
     setText([...text, newText]);
     resetForm();
+
+    if (focusInput.current) {
+      focusInput.current.focus();
+    }
   };
 
   // Working에서의 삭제버튼 로직
@@ -74,40 +82,49 @@ const App = () => {
 
   return (
     <div>
-      <h3>My Todo List</h3>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <h2 className="title-main">My Todo List</h2>
+      <form onSubmit={handleSubmit} className="form-style">
+        <label className="label-style">
           제목
           <input
             type="text"
+            className="input-style"
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            ref={focusInput}
           />
         </label>
-        <label>
+        <label className="label-style">
           내용
           <input
             type="text"
+            className="input-style"
             value={content}
             onChange={(e) => {
               setContent(e.target.value);
             }}
           />
         </label>
-        <button type="submit">추가하기</button>
+        <button type="submit" className="plus-btn">
+          추가하기
+        </button>
       </form>
-      <h2>Working..🔥🔥🔥</h2>
-      <div>
+      <h2 className="title-work">Working..🔥🔥🔥</h2>
+      <div className="work-box">
         {text.map((data, index) => (
-          <div key={index}>
-            <span>{data.title}</span>
+          <div key={index} className="work-form">
+            <span className="work-title">제목{data.title}</span>
             <br />
-            <span>{data.content}</span>
+            <span className="work-content">내용{data.content}</span>
             <br />
-            <button onClick={() => handleWorkDelete(index)}>삭제하기</button>
-            <button onClick={() => handleComplete(index)}>완료</button>
+            <button className="work-delete-btn" onClick={() => handleWorkDelete(index)}>
+              삭제하기
+            </button>
+            <button className="work-complete-btn" onClick={() => handleComplete(index)}>
+              완료
+            </button>
           </div>
         ))}
       </div>
