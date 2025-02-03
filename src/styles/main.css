@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  background-color: rgb(209, 209, 209);
 }
 
 .title-main {
@@ -10,7 +11,7 @@ body {
   display: flex;
   margin-left: 10px;
   margin-right: 10px;
-  border: 1px solid red;
+  border: 5px solid #007573;
   align-items: center;
   background-color: antiquewhite;
   border-radius: 20px;
@@ -22,21 +23,34 @@ body {
   align-items: center;
   text-indent: 50px;
   gap: 15px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .input-style {
   height: 30px;
   width: 300px;
   border-radius: 10px;
+  text-indent: 10px;
+  font-size: 20px;
 }
 
 .plus-btn {
+  color: white;
+  background-color: #007573;
   width: 150px;
   align-items: center;
   height: 35px;
   margin-left: auto;
   margin-right: 50px;
   border-radius: 10px;
+  border-style: none;
+}
+
+.plus-btn:hover {
+  cursor: pointer;
+  color: #007573;
+  background-color: white;
 }
 
 .title-work,
@@ -56,7 +70,7 @@ body {
 
 .work-form,
 .done-form {
-  border: 1px solid red;
+  border: 5px solid #007573;
   border-radius: 25px;
   min-width: 350px;
   max-width: 500px;
@@ -76,6 +90,7 @@ body {
   text-indent: 20px;
   margin-top: 30px;
   font-size: 25px;
+  font-weight: bold;
   text-align: left;
 }
 
@@ -91,10 +106,48 @@ body {
   width: 150px;
   height: 50px;
   margin-right: 15px;
+  background-color: rgb(239, 142, 142);
+  color: white;
+  font-size: 15px;
+  border-radius: 15px;
+  border-style: none;
 }
 
-.work-complete-btn,
-.done-cancel-btn {
+.work-delete-btn:hover,
+.done-delete-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(239, 142, 142);
+}
+
+.work-complete-btn {
+  background-color: #007573;
+  color: white;
+  font-size: 15px;
+  border-radius: 15px;
+  border-style: none;
   width: 150px;
   height: 50px;
+}
+
+.work-complete-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #007573;
+}
+
+.done-cancel-btn {
+  background-color: #faebd7;
+  color: black;
+  font-size: 15px;
+  border-radius: 15px;
+  border-style: none;
+  width: 150px;
+  height: 50px;
+}
+
+.done-cancel-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
 }
