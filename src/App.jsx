@@ -129,16 +129,20 @@ const App = () => {
         ))}
       </div>
 
-      <h2>Done..!🎉</h2>
-      <div>
+      <h2 className="title-done">Done..!🎉</h2>
+      <div className="done-box">
         {moveText.map((data, index) => (
-          <div key={index}>
-            <span>{data.title}</span>
+          <div key={index} className="done-form">
+            <span className="done-title">{data.title}</span>
             <br />
-            <span>{data.content}</span>
+            <span className="done-content">{data.content}</span>
             <br />
-            <button onClick={() => handleDoneDelete(index)}>삭제하기</button>
-            <button onClick={() => handelCancel(index)}>취소</button>
+            <button className="done-delete-btn" onClick={() => handleDoneDelete(index)}>
+              삭제하기
+            </button>
+            <button className="done-cancel-btn" onClick={() => handelCancel(index)}>
+              취소
+            </button>
           </div>
         ))}
       </div>
